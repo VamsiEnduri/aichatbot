@@ -1,14 +1,16 @@
 import streamlit as st 
 from openai import OpenAI
-from dotenv import dotenv_values
 
-
-config = dotenv_values(".env")
 
 # print(config)
 
+# client = OpenAI(
+#     api_key=config["open_api_key"],
+#     base_url="https://api.groq.com/openai/v1"
+# )
+
 client = OpenAI(
-    api_key=config["open_api_key"],
+    api_key=st.secrets["GROQ_API_KEY"],
     base_url="https://api.groq.com/openai/v1"
 )
 
